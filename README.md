@@ -1,6 +1,8 @@
 # task-tracker-api
 
-### Users
+A simple task tracker API built using [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)) and [Slim](http://www.slimframework.com/), inspired by Atlassian JIRA. This was built in a day for my CMPT 350 course, and likely won't be extended.
+
+### users
 Method | URI | Description | Request Body
 -------|-------|-------|-------
 GET    | `/api/users` | Returns the user info for all users in the database.
@@ -9,7 +11,7 @@ POST   | `/api/users` | Adds the given user, assuming a user with that name does
 PUT    | `/api/users/{name}` | Edits the information for the user with the name `{name}`. | `{"email": "foo"}`
 DELETE | `/api/users/{name}` | Deletes the user with name `{name}`.      
 
-### Projects
+### projects
 Method | URI | Description | Request Body
 -------|-------|-------|-------
 GET    | `/api/projects` | Returns the project info for all projects in the database.
@@ -18,7 +20,7 @@ POST   | `/api/projects` | Adds the given project to the database assuming that 
 PUT    | `/api/projects/{projectID}` | Edits the project with the ID `{projectID}`. | `{"name": "foo"}`
 DELETE | `/api/projects/{projectID}`| Deltes the project with the ID `{projectID}`.
 
-### Tasks
+### tasks
 Method | URI | Description | Request Body
 -------|-------|-------|-------
 GET    | `/api/projects/{projectID}/tasks` | Returns all of the tasks for the project with the ID `{projectID}`.
@@ -27,7 +29,7 @@ POST   | `/api/projects/{projectID}/tasks` | Adds the given task to the database
 PUT    | `/api/projects/{projectID}/tasks/{taskID}` | Edits the task with the ID `{taskID}`. Stage should be one of the following values: `"to do"`, `"in progress"`, `"in review"`, `"done"` | `{"title": "bar", "description": "baz" "stage": "to do"}`
 DELETE | `/api/projects/{projectID}/tasks/{taskID}` | Deletes the task with the ID `{taskID}`.
 
-### Comments
+### comments
 Method | URI | Description | Request Body
 -------|-------|-------|-------
 GET    | `/api/projects/{projectID}/tasks/{taskID}/comments` | Returns all of the comments for the task with the ID `{taskID}`.
